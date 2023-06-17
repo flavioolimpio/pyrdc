@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
-from texts import Texts
+#from texts import Texts
 from testes import testes_variancia
 from plots import Plots
 from normalidade import test_norm
