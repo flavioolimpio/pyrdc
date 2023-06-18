@@ -2,6 +2,7 @@ import pandas as pd
 import statsmodels.stats.api as sms
 import statsmodels.formula.api as smf
 import statsmodels.api as sm
+import statsmodels.stats.diagnostic as sms
 from scipy.stats import shapiro
 
 class testes_variancia:
@@ -30,6 +31,12 @@ class testes_variancia:
         gq_test = pd.DataFrame([sms.het_goldfeldquandt(resids, model.model.exog)[:-1]],
                                columns=['Estatistica', 'P-value'],)
         
+        # realiza o teste de Breusch-Godfrey com 4 defasagens
+        bg_test = sms.acorr_breusch_godfrey(model, nlags=4)
+
+        # cria um DataFrame com o resultado do teste
+        df = pd.DataFrame({"Estatística": [bg_test[0]], "P-valor": [bg_test[1]]})
+        
         # Calcule o teste de Shapiro-Wilk para x
         stat, p = shapiro(resids)
 
@@ -38,7 +45,7 @@ class testes_variancia:
             'P-valor': [p]
         }, index=[0])
         
-        return bp_test, gq_test, teste_shapiro
+        return bp_test, gq_test, bg_test, teste_shapiro
     
     def anova(self, data):
         model_ols = smf.ols('Área ~ Concentração', data=data).fit()

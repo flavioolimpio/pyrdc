@@ -204,5 +204,29 @@ class Texts:
             </body>
             """
         return TEXT10
+    
+    def text11(p_value):
+        if p_value > 0.05:
+            TEXT11 = f"""
+            <body style='text-align: justify; color: black;'>
+            <h2 style='text-align: justify; color: black;'>5.3. Avaliação da independência via teste de Breusch-Godfrey</h2>
+            <p> O teste de Breusch-Godfrey é usado para avaliar a pressuposição de independência dos resíduos. Neste caso, as hipóteses foram as seguintes:</p>
+            <p>H0: Os resíduos são independentes.</p>
+            <p>H1: Os resíduos não são independentes.</p>
+            <p> Como o P-valor ({p_value}) do teste de Breusch-Godfrey é maior que 0,05 (conforme especificado), não rejeita-se a hipótese nula ao nível de significância de 5%. Logo, conclui-se que não há evidências suficientes para afirmar que os resíduos não são independentes.</p>
+            </body>
+            """
+        else:
+            TEXT11 = f"""
+            <body style='text-align: justify; color: black;'>
+            <h2 style='text-align: justify; color: black;'>5.3. Avaliação da independência via teste de Breusch-Godfrey</h2>
+            <p> O teste de Breusch-Godfrey é usado para avaliar a pressuposição de independência dos resíduos. Neste caso, as hipóteses foram as seguintes:</p>
+            <p>H0: Os resíduos são independentes.</p>
+            <p>H1: Os resíduos não são independentes.</p>
+            <p> Como o P-valor ({p_value}) do teste de Breusch-Godfrey é menor ou igual a 0,05 (conforme especificado), rejeita-se a hipótese nula ao nível de significância de 5%. Logo, conclui-se que há evidências suficientes para afirmar que os resíduos não são independentes.</p>
+            </body>
+            """
+        return TEXT11
+
 
 

@@ -84,7 +84,7 @@ def linearidade():
         st.write("Figura 4: Gráfico de Resíduos vs Ordem de Coleta")
         st.pyplot(fig=fig_coleta)
 
-        bp_test, gq_test, shapiro = gettestes.homoscedasticity_test(data=df)
+        bp_test, gq_test, bg_test, shapiro = gettestes.homoscedasticity_test(data=df)
 
         ps = shapiro['P-valor']
         p_value_shapiro = ps.item()
@@ -99,6 +99,15 @@ def linearidade():
         st.markdown('{}'.format(text10), unsafe_allow_html=True)
         st.write("Tabela 7: Teste de homecedasticidade Breusch-Pagan")
         st.table(bp_test)
+
+        pbg = bg_test['P-valor']
+        p_value_bpg = pbg.item()
+        text11 = gettext.text11(p_value=p_value_bpg)
+        st.markdown('{}'.format(text11), unsafe_allow_html=True)
+        st.write("Tabela 7: Teste de homecedasticidade Breusch-Pagan")
+        st.table(bp_test)
+        
+        
         #st.write("Teste de homecedasticidade Goldfeld-Quandt")
         #st.table(gq_test)
      
