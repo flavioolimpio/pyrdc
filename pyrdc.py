@@ -57,7 +57,7 @@ def linearidade():
         st.write("Intervalo de confiança para os parâmetros")
         st.table(conf_int)
 
-        p_value_coef = conf_int['P-valor'][0]
+        p_value_coef = coef_table['P-valor'][0]
         text6 = gettext.text6(p_value=p_value_coef)
         st.markdown('{}'.format(text6), unsafe_allow_html=True)
 
