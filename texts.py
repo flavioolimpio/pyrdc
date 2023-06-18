@@ -138,7 +138,7 @@ class Texts:
             """            
         return TEXT7
     
-    def text8():
+    def text8(self):
         TEXT8 = """
         <body style='text-align: justify; color: black;'>
         <h1 style='text-align: justify; color: black;'>4. Análise Gráfica</h1>
