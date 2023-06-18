@@ -27,13 +27,15 @@ def linearidade():
         gettext = Texts()
     
         text2 = gettext.text2()
-        st.markdown('#pyRDC')
         st.markdown('{}'.format(text2), unsafe_allow_html=True)
 
-        text3 = gettext.text2()
+        text3 = gettext.text3()
         st.markdown('{}'.format(text3), unsafe_allow_html=True)
         st.write("Table: Conjunto de dados para o estudo de Linearidade")
         st.table(df)
+
+        text4 = gettext.text4()
+        st.markdown('{}'.format(text4), unsafe_allow_html=True)
 
         gettestes = testes_variancia()
         
