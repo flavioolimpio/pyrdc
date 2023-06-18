@@ -22,10 +22,10 @@ class testes_variancia:
         resids_standardized = model.get_influence().resid_studentized_internal
     
         bp_test = pd.DataFrame([[x for x in sms.het_breuschpagan(resids, model.model.exog,True)]], 
-                               columns=['Estatistica', 'P-value', 'f-value', 'f p-value'])
+                               columns=['Estatistica', 'P-valor', 'f-value', 'f p-value'])
         
         # Selecione apenas as duas primeiras colunas
-        bp_test = bp_test[['Estatistica', 'P-value']]
+        bp_test = bp_test[['Estatistica', 'P-valor']]
     
         gq_test = pd.DataFrame([sms.het_goldfeldquandt(resids, model.model.exog)[:-1]],
                                columns=['Estatistica', 'P-value'],)
