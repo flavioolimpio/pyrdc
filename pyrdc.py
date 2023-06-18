@@ -41,13 +41,14 @@ def linearidade():
         
         aov_table, coef_table, conf_int, pearson_table = gettestes.anova(data=df)
 
-        st.write("Tabela da ANOVA")
+        st.write("Tabela ANOVA: Esta tabela apresenta os resultados da análise de variância (ANOVA) para avaliar a significância das diferenças entre as médias dos grupos." +  
+                 "A tabela inclui a fonte de variação, os graus de liberdade, a soma dos quadrados, a média dos quadrados, o valor F e o valor P")
         st.table(aov_table)
 
-        if aov_table['P-valor'][0] < 0.05:
-            st.write("Rejeitamos a hipótese nula de que os grupos são iguais.")
-        else:
-            st.write("Não podemos rejeitar a hipótese nula de que os grupos são iguais.")
+        p_value = aov_table['P-valor'][0]
+
+        text5 = gettext.text5(p_value=p_value)
+        st.markdown('{}'.format(text5), unsafe_allow_html=True)
 
         st.write("Tabela dos coeficientes")
         st.table(coef_table)

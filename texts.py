@@ -65,3 +65,21 @@ class Texts:
         """
 
         return TEXT4
+    
+
+    def text5(self, p_value):
+        if p_value > 0.05:
+            TEXT5 = f"""
+            <body style='text-align: justify; color: black;'>
+            <p> Como P-valor ({p_value}) do teste t maior que 0,05 (conforme especificado), não rejeita-se a hipótese nula (intercepto igual ao zero) ao nível de significância de 5%. Logo, conclui-se que o intercepto é estatísticamente igual ao zero.
+            </p>
+            </body>
+            """
+        else:
+            TEXT5 = f"""
+            <body style='text-align: justify; color: black;'>
+            <p> Como P-valor ({p_value}) do teste t menor ou igual a 0,05 (conforme especificado), rejeita-se a hipótese nula (intercepto igual ao zero) ao nível de significância de 5%. Logo, conclui-se que o intercepto é estatísticamente diferente de zero.
+            </p>
+            </body>
+            """
+        return TEXT5
