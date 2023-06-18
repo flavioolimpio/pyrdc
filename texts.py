@@ -35,4 +35,33 @@ class Texts:
         return TEXT2
     
     def text3(self):
-        pass
+        TEXT3 = """
+        <body style='text-align: justify; color: black;'>
+        <h1 style='text-align: justify; color: black;'>2. Coleta de Dados</h1>
+        <p> A seguir, apresentam-se os dados coletados:
+        </p>
+        </body>
+        """
+
+        return TEXT3
+    
+    def text4(self):
+        TEXT4 = """
+        <body style='text-align: justify; color: black;'>
+        <h1 style='text-align: justify; color: black;'>3. MÉTODO DOS MÍNIMOS QUADRADOS ORDINÁRIOS ESTIMAÇÃO</h1>
+        <p> O método dos mínimos quadrados é uma eficiente estratégia de estimação dos parâmetros da
+        regressão e sua aplicação não é limitada apenas às relações lineares. Nesta seção utilizou-se o
+        Método dos Mínimos Quadrados Ordinários.
+        </p>
+        </body>
+        <body style='text-align: justify; color: black;'>
+        <h1 style='text-align: justify; color: black;'>3.1. TESTE DO COEFICIENTE ANGULAR</h1>
+        <p> Para avaliar a significância do modelo utilizou-se o teste F da ANOVA. Neste caso, testou-se as hipóteses:</p>
+        <p>H0: coeficiente angular igual a zero; </p>
+        <p>H1: coeficiente angular diferente de zero.
+        </p>
+        </body>
+
+        """
+
+        return TEXT4

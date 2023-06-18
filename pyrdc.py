@@ -30,6 +30,11 @@ def linearidade():
         st.markdown('#pyRDC')
         st.markdown('{}'.format(text2), unsafe_allow_html=True)
 
+        text3 = gettext.text2()
+        st.markdown('{}'.format(text3), unsafe_allow_html=True)
+        st.write("Table: Conjunto de dados para o estudo de Linearidade")
+        st.table(df)
+
         gettestes = testes_variancia()
         
         aov_table, coef_table, conf_int, pearson_table = gettestes.anova(data=df)
