@@ -66,7 +66,7 @@ def linearidade():
         st.write("Medida descritiva da qualidade do ajuste")
         st.table(pearson_table)
 
-        text7 = gettext.tex7(r_value=cc)
+        text7 = gettext.text7(r_value=cc)
         st.markdown('{}'.format(text7), unsafe_allow_html=True)
 
         bp_test, gq_test, shapiro = gettestes.homoscedasticity_test(data=df)
