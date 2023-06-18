@@ -205,7 +205,7 @@ class Texts:
             """
         return TEXT10
     
-    def text11(p_value):
+    def text11(self, p_value):
         if p_value > 0.05:
             TEXT11 = f"""
             <body style='text-align: justify; color: black;'>
