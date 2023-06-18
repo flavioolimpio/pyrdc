@@ -137,3 +137,20 @@ class Texts:
             </body>
             """            
         return TEXT7
+    
+    def text8():
+        TEXT8 = """
+        <body style='text-align: justify; color: black;'>
+        <h1 style='text-align: justify; color: black;'>4. Análise Gráfica</h1>
+        <p>Existem vários gráficos que podem ser usados para avaliar a qualidade do ajuste de um modelo estatístico aos dados. Alguns exemplos incluem:</p>
+        <h1 style='text-align: justify; color: black;'>4.1 Diagóstico dos resíduos do modelo</h1>
+        <ul>
+            <li><strong>Gráfico de Resíduos Padronizados vs Valores Ajustados:</strong> Este gráfico é usado para verificar se os resíduos se distribuem aleatoriamente e para detectar a presença de valores extremos (outliers) nos dados. Geralmente, consideram-se outliers os pontos que excedem o limite de 3 desvios padrão.</li>
+            <li><strong>Gráfico de Probabilidade Normal dos Resíduos:</strong> Este gráfico é usado para verificar a pressuposição de que os resíduos são distribuídos normalmente. Em caso de normalidade, os resíduos em geral seguem aproximadamente uma linha reta.</li>
+            <li><strong>Gráfico de Resíduos vs Valores Ajustados:</strong> Este gráfico é usado para verificar a pressuposição de que os resíduos se distribuem aleatoriamente e têm variância constante.</li>
+            <li><strong>Gráfico de Resíduos vs Ordem de Coleta:</strong> Este gráfico mostra os resíduos na ordem em que foram coletados e é usado para verificar a pressuposição de independência. Em geral, para que se cumpra tal requisito, os dados devem se dispor aleatoriamente em torno da linha central.</li>
+        </ul>
+        <p>As figuras dos 4 gráficos são mostradas a seguir.</p>
+        </body>
+        """
+        return TEXT8

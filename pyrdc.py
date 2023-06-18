@@ -82,6 +82,9 @@ def linearidade():
         getfigs = Plots()
         fig_residuo, fig_residuo_pad, fig_qqplot, fig_coleta = getfigs.graficos(df['Concentração'].values,df['Área'].values)
 
+        text8 = gettext.text8()
+        st.markdown('{}'.format(text8), unsafe_allow_html=True)
+
         st.write("Figura 1")
         st.pyplot(fig=fig_residuo)
         st.write("Figura 2")
