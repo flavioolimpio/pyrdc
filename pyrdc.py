@@ -7,7 +7,7 @@ import statsmodels.formula.api as smf
 #from texts import Texts
 from testes import testes_variancia
 from plots import Plots
-from normalidade import test_norm
+#from normalidade import test_norm
 
 def home():
     st.title("Página Inicial")
