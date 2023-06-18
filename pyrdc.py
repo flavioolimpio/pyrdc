@@ -4,20 +4,32 @@ import pandas as pd
 import numpy as np
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
-#from texts import Texts
+from texts import Texts
 from testes import testes_variancia
 from plots import Plots
 #from normalidade import test_norm
 
 def home():
     st.title("Página Inicial")
-    st.write("Este é o texto da página Home.")
+    gettext = Texts()
+    
+    text1 = gettext.text1()
+    st.markdown('#pyRDC')
+    st.markdown('{}'.format(text1), unsafe_allow_html=True)
+
 
 def linearidade():
-    st.title("Página de Linearidade")
+    st.title("Resultado da Análise")
     file = st.file_uploader("Arraste e solte um arquivo .csv ou .xlsx aqui", type=['csv', 'xlsx'])
     if file:    
         df = pd.read_csv(file)
+
+        gettext = Texts()
+    
+        text2 = gettext.text2()
+        st.markdown('#pyRDC')
+        st.markdown('{}'.format(text2), unsafe_allow_html=True)
+
         gettestes = testes_variancia()
         
         aov_table, coef_table, conf_int, pearson_table = gettestes.anova(data=df)
