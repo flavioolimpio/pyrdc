@@ -85,15 +85,14 @@ def linearidade():
         text8 = gettext.text8()
         st.markdown('{}'.format(text8), unsafe_allow_html=True)
 
-        st.write("Figura 1")
+        st.write("Figura 1: Gráfico de Resíduos Padronizados vs Valores Ajustados.")
         st.pyplot(fig=fig_residuo)
-        st.write("Figura 2")
+        st.write("Figura 2: Gráfico de Probabilidade Normal dos Resíduos.")
         st.pyplot(fig=fig_residuo_pad)
-        st.write("Figura 3")
+        st.write("Figura 3: Gráfico de Resíduos vs Valores Ajustados.")
         st.pyplot(fig=fig_qqplot)
-        st.write("Figura 4")
+        st.write("Figura 4: Gráfico de Resíduos vs Ordem de Coleta")
         st.pyplot(fig=fig_coleta)
-
 
 # Criação das páginas
 PAGES = {
