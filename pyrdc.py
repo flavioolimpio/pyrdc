@@ -61,7 +61,7 @@ def linearidade():
         text6 = gettext.text6(p_value=p_value_coef)
         st.markdown('{}'.format(text6), unsafe_allow_html=True)
 
-        cc = pearson_table['oeficiente de Correlação'][0]
+        cc = pearson_table['Coeficiente de Correlação'][0]
         st.write("Medida descritiva da qualidade do ajuste")
         st.table(pearson_table)
 
