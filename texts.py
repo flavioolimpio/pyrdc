@@ -142,8 +142,8 @@ class Texts:
         TEXT8 = """
         <body style='text-align: justify; color: black;'>
         <h1 style='text-align: justify; color: black;'>4. Análise Gráfica</h1>
-        <p>Existem vários gráficos que podem ser usados para avaliar a qualidade do ajuste de um modelo estatístico aos dados. Alguns exemplos incluem:</p>
         <h1 style='text-align: justify; color: black;'>4.1. Diagóstico dos resíduos do modelo</h1>
+        <p>Existem vários gráficos que podem ser usados para avaliar a qualidade do ajuste de um modelo estatístico aos dados. Alguns exemplos incluem:</p>
         <ul>
             <li><strong>Gráfico de Resíduos Padronizados vs Valores Ajustados:</strong> Este gráfico é usado para verificar se os resíduos se distribuem aleatoriamente e para detectar a presença de valores extremos (outliers) nos dados. Geralmente, consideram-se outliers os pontos que excedem o limite de 3 desvios padrão.</li>
             <li><strong>Gráfico de Probabilidade Normal dos Resíduos:</strong> Este gráfico é usado para verificar a pressuposição de que os resíduos são distribuídos normalmente. Em caso de normalidade, os resíduos em geral seguem aproximadamente uma linha reta.</li>
@@ -182,7 +182,7 @@ class Texts:
         return TEXT9
     
 
-    def text10(self, p_value):
+    def text10(p_value):
         if p_value > 0.05:
             TEXT10 = f"""
             <body style='text-align: justify; color: black;'>
@@ -190,7 +190,7 @@ class Texts:
             <p> O teste de Breusch-Pagan é usado para avaliar a pressuposição de homocedasticidade dos resíduos. Neste caso, as hipóteses foram as seguintes:</p>
             <p>H0: Os resíduos têm variância constante.</p>
             <p>H1: Os resíduos não têm variância constante.</p>
-            <p> Como o P-valor ({p_value}) do teste de Breusch-Pagan é maior que 0,05 (conforme especificado), não rejeita-se a hipótese nula ao nível de significância de 5%. Logo, conclui-se que não há evidências suficientes para afirmar que os resíduos não têm variância constante.</p>
+            <p> Como o P-valor ({p_value}) do teste de Breusch-Pagan é maior que 0,05 (conforme especificado), não rejeita-se a hipótese nula ao nível de significância de 5%. Logo, conclui-se que não há evidências suficientes para afirmar que os resíduos não têm variância constante. Portanto, podemos considerar que os dados são homocedásticos.</p>
             </body>
             """
         else:
@@ -200,7 +200,7 @@ class Texts:
             <p> O teste de Breusch-Pagan é usado para avaliar a pressuposição de homocedasticidade dos resíduos. Neste caso, as hipóteses foram as seguintes:</p>
             <p>H0: Os resíduos têm variância constante.</p>
             <p>H1: Os resíduos não têm variância constante.</p>
-            <p> Como o P-valor ({p_value}) do teste de Breusch-Pagan é menor ou igual a 0,05 (conforme especificado), rejeita-se a hipótese nula ao nível de significância de 5%. Logo, conclui-se que há evidências suficientes para afirmar que os resíduos não têm variância constante.</p>
+            <p> Como o P-valor ({p_value}) do teste de Breusch-Pagan é menor ou igual a 0,05 (conforme especificado), rejeita-se a hipótese nula ao nível de significância de 5%. Logo, conclui-se que há evidências suficientes para afirmar que os resíduos não têm variância constante. Portanto, podemos considerar que os dados são heterocedásticos.</p>
             </body>
             """
         return TEXT10
