@@ -104,9 +104,8 @@ def linearidade():
         p_value_bpg = pbg.item()
         text11 = gettext.text11(p_value=p_value_bpg)
         st.markdown('{}'.format(text11), unsafe_allow_html=True)
-        st.write("Tabela 7: Teste de homecedasticidade Breusch-Pagan")
-        st.table(bp_test)
-        
+        st.write("Tabela 8: Teste de independência de Breusch-Godfrey")
+        st.table(bg_test)
         
         #st.write("Teste de homecedasticidade Goldfeld-Quandt")
         #st.table(gq_test)

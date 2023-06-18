@@ -35,7 +35,7 @@ class testes_variancia:
         bg_test = sms.acorr_breusch_godfrey(model, nlags=4)
 
         # cria um DataFrame com o resultado do teste
-        df = pd.DataFrame({"Estatística": [bg_test[0]], "P-valor": [bg_test[1]]})
+        bg_test = pd.DataFrame({"Estatística": [bg_test[0]], "P-valor": [bg_test[1]]})
         
         # Calcule o teste de Shapiro-Wilk para x
         stat, p = shapiro(resids)
