@@ -63,11 +63,10 @@ def linearidade():
 
         cc = pearson_table['Coeficiente de Correlação']
         r_value = cc.item()
-        st.write("Medida descritiva da qualidade do ajuste")
-        st.table(pearson_table)
-
         text7 = gettext.text7(r_value=r_value)
         st.markdown('{}'.format(text7), unsafe_allow_html=True)
+        st.write("Medida descritiva da qualidade do ajuste")
+        st.table(pearson_table)
 
         bp_test, gq_test, shapiro = gettestes.homoscedasticity_test(data=df)
 
