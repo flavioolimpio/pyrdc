@@ -71,15 +71,69 @@ class Texts:
         if p_value > 0.05:
             TEXT5 = f"""
             <body style='text-align: justify; color: black;'>
-            <p> Como P-valor ({p_value}) do teste t maior que 0,05 (conforme especificado), não rejeita-se a hipótese nula (intercepto igual ao zero) ao nível de significância de 5%. Logo, conclui-se que o intercepto é estatísticamente igual ao zero.
+            <p> Como P-valor ({p_value}) do teste ANOVA é maior que 0,05 (conforme especificado), não rejeita-se a hipótese nula (intercepto igual ao zero) ao nível de significância de 5%. Logo, conclui-se que o intercepto é estatísticamente igual ao zero.
             </p>
             </body>
             """
         else:
             TEXT5 = f"""
             <body style='text-align: justify; color: black;'>
-            <p> Como P-valor ({p_value}) do teste t menor ou igual a 0,05 (conforme especificado), rejeita-se a hipótese nula (intercepto igual ao zero) ao nível de significância de 5%. Logo, conclui-se que o intercepto é estatísticamente diferente de zero.
+            <p> Como P-valor ({p_value}) do teste ANOVA é menor ou igual a 0,05 (conforme especificado), rejeita-se a hipótese nula (intercepto igual ao zero) ao nível de significância de 5%. Logo, conclui-se que o intercepto é estatísticamente diferente de zero.
             </p>
             </body>
             """
         return TEXT5
+    
+    def text6(self, p_value):
+        if p_value > 0.05:
+            TEXT6 = f"""
+            <body style='text-align: justify; color: black;'>
+            <h1 style='text-align: justify; color: black;'>3.2. Teste do intercepto (coeficiente linear)</h1>
+            <p> Para avaliar o intercepto (coeficiente linear) utilizou-se a estatística t de Student. Neste caso, as hipóteses foram as seguintes::</p>
+            <p>H0: coeficiente angular igual a zero; </p>
+            <p>H1: coeficiente angular diferente de zero.
+            </p>
+            </body>
+
+            <body style='text-align: justify; color: black;'>
+            <p> Como P-valor ({p_value}) do teste t é maior que 0,05 (conforme especificado), não rejeita-se a hipótese nula (intercepto igual ao zero) ao nível de significância de 5%. Logo, conclui-se que o intercepto é estatísticamente igual ao zero.
+            </p>
+            </body>
+            """
+        else:
+            TEXT6 = f"""
+            <body style='text-align: justify; color: black;'>
+            <h1 style='text-align: justify; color: black;'>3.2. Teste do intercepto (coeficiente linear)</h1>
+            <p> Para avaliar o intercepto (coeficiente linear) utilizou-se a estatística t de Student. Neste caso, as hipóteses foram as seguintes::</p>
+            <p>H0: coeficiente angular igual a zero; </p>
+            <p>H1: coeficiente angular diferente de zero.
+            </p>
+            </body>
+
+            <body style='text-align: justify; color: black;'>
+            <p> Como P-valor ({p_value}) do teste t é menor ou igual a 0,05 (conforme especificado), rejeita-se a hipótese nula (intercepto igual ao zero) ao nível de significância de 5%. Logo, conclui-se que o intercepto é estatísticamente diferente de zero.
+            </p>
+            </body>
+            """
+        return TEXT6
+    
+    def text7(self, r_value):
+        if r_value > 0.9900:
+            TEXT7 = f"""
+            <body style='text-align: justify; color: black;'>
+            <h1 style='text-align: justify; color: black;'>3.3. Coeficiente de correlação de Pearson</h1>
+            <p> O coeficiente de correlação de Pearson mede a força e a direção da relação linear entre duas variáveis. Neste caso, o coeficiente de correlação é {r_value}, 
+            o que é maior do que o valor especificado de 0,9900. Isso indica que existe uma forte relação linear entre as duas variáveis. Portanto, podemos concluir que a relação linear entre as variáveis é adequada.
+            </p>
+            </body>
+            """ 
+        else:
+            TEXT7 = f"""
+            <body style='text-align: justify; color: black;'>
+            <h1 style='text-align: justify; color: black;'>3.3. Coeficiente de correlação de Pearson</h1>
+            O coeficiente de correlação de Pearson mede a força e a direção da relação linear entre duas variáveis. Neste caso, o coeficiente de correlação é {r_value}, 
+            o que é menor do que o valor especificado de 0,9900. Isso indica que a relação linear entre as duas variáveis não é tão forte. Portanto, podemos concluir que a relação linear entre as variáveis não é adequada.
+            </p>
+            </body>
+            """            
+        return TEXT7

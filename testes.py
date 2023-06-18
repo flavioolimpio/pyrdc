@@ -56,7 +56,7 @@ class testes_variancia:
         'Estimativa': model_ols.params,
         'Desvio Padrão': model_ols.bse,
         'Estatística T': model_ols.tvalues,
-        'Valor P': model_ols.pvalues})
+        'P-valor': model_ols.pvalues})
 
         # Calcule os intervalos de confiança de 95% para os parâmetros
         conf_int = model_ols.conf_int(alpha=0.05)

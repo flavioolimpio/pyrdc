@@ -45,19 +45,29 @@ def linearidade():
                  "A tabela inclui a fonte de variação, os graus de liberdade, a soma dos quadrados, a média dos quadrados, o valor F e o valor P")
         st.table(aov_table)
 
-        p_value = aov_table['P-valor'][0]
+        p_value_anova = aov_table['P-valor'][0]
 
-        text5 = gettext.text5(p_value=p_value)
+        text5 = gettext.text5(p_value=p_value_anova)
         st.markdown('{}'.format(text5), unsafe_allow_html=True)
 
+        st.write("As estimativas dos parâmetros (coeficientes de regressão) e seus respectivos intervalos de confiança de 95% são:")
         st.write("Tabela dos coeficientes")
         st.table(coef_table)
 
         st.write("Intervalo de confiança para os parâmetros")
         st.table(conf_int)
 
+        p_value_coef = conf_int['P-valor'][0]
+        text6 = gettext.text6(p_value=p_value_coef)
+        st.markdown('{}'.format(text6), unsafe_allow_html=True)
+
+        cc = pearson_table['oeficiente de Correlação'][0]
         st.write("Medida descritiva da qualidade do ajuste")
         st.table(pearson_table)
+
+        text7 = gettext.tex7(r_value=cc)
+        st.markdown('{}'.format(text7), unsafe_allow_html=True)
+
 
         bp_test, gq_test, shapiro = gettestes.homoscedasticity_test(data=df)
 
