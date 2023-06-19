@@ -17,7 +17,10 @@ class testes_variancia:
         Args:
         * model - fitted OLS model from statsmodels
         '''
-        model = smf.ols('Área ~ Concentração', data=data).fit()
+        x = data.columns[0]
+        y = data.columns[1]
+        formula = f'{y} ~ {x}'
+        model = smf.ols(formula, data=data).fit()
         fitted_vals = model.predict()
         resids = model.resid
         resids_standardized = model.get_influence().resid_studentized_internal
@@ -48,7 +51,11 @@ class testes_variancia:
         return bp_test, gq_test, bg_test, teste_shapiro
     
     def anova(self, data):
-        model_ols = smf.ols('Área ~ Concentração', data=data).fit()
+        
+        x = data.columns[0]
+        y = data.columns[1]
+        formula = f'{y} ~ {x}'
+        model_ols = smf.ols(formula, data=data).fit()
         aov_table = sm.stats.anova_lm(model_ols, typ=2)
 
         # Adicione uma coluna para os quadrados médios
