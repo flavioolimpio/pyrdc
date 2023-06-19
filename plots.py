@@ -74,7 +74,7 @@ class Plots:
         #ordem_coleta = [14,13,9,7,10,2,15,11,8,1,12,6,4,5,3]
         ordem_coleta = ordem
         fig_coleta, ax_coleta = plt.subplots()
-        ordem = sns.lineplot(x=ordem_coleta, y=resp - y_pred, ax=ax_coleta, markers=True, dashes=False)
+        ordem = sns.lineplot(x=ordem_coleta, y=resp - y_pred, ax=ax_coleta, markers=True, dashes=False, style=True)
 
         return fig_residuo, fig_residuo_pad, fig_qqplot, fig_coleta
 
