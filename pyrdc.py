@@ -70,7 +70,10 @@ def linearidade():
         st.table(pearson_table)
 
         getfigs = Plots()
-        fig_residuo, fig_residuo_pad, fig_qqplot, fig_coleta = getfigs.graficos(df['Concentração'].values,df['Área'].values)
+        x = df.columns[0]
+        y = df.columns[1]
+        z = df.columns[3]
+        fig_residuo, fig_residuo_pad, fig_qqplot, fig_coleta = getfigs.graficos(df[x].values,df[y].values, df[z].values)
 
         text8 = gettext.text8()
         st.markdown('{}'.format(text8), unsafe_allow_html=True)

@@ -53,7 +53,7 @@ class Plots:
     #    return fig_hist
 
     
-    def graficos(self, conc, resp):
+    def graficos(self, conc, resp, ordem):
         slope, intercept, _, _, _ = stats.linregress(conc, resp)
 
         y_pred = intercept + (slope*conc)
@@ -71,10 +71,10 @@ class Plots:
 
         fig_qqplot = qqplot(resp - y_pred, line='s')
 
-        ordem_coleta = [14,13,9,7,10,2,15,11,8,1,12,6,4,5,3]
+        #ordem_coleta = [14,13,9,7,10,2,15,11,8,1,12,6,4,5,3]
+        ordem_coleta = ordem
         fig_coleta, ax_coleta = plt.subplots()
-        ordem = sns.lineplot(x=ordem_coleta, y=resp - y_pred, ax=ax_coleta, linestyle='dashdot')
-
+        ordem = sns.lineplot(x=ordem_coleta, y=resp - y_pred, ax=ax_coleta, markers=True, dashes=True)
 
         return fig_residuo, fig_residuo_pad, fig_qqplot, fig_coleta
 
