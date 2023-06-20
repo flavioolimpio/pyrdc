@@ -103,6 +103,8 @@ def linearidade():
         st.write("Tabela 7: Teste de homecedasticidade Breusch-Pagan")
         st.table(bp_test)
 
+        
+
         pbg = bg_test['P-valor']
         p_value_bpg = pbg.item()
         text11 = gettext.text11(p_value=p_value_bpg)

@@ -21,9 +21,9 @@ class testes_variancia:
         y = data.columns[1]
         formula = f'{y} ~ {x}'
         model = smf.ols(formula, data=data).fit()
-        fitted_vals = model.predict()
+        #fitted_vals = model.predict()
         resids = model.resid
-        resids_standardized = model.get_influence().resid_studentized_internal
+        #resids_standardized = model.get_influence().resid_studentized_internal
     
         bp_test = pd.DataFrame([[x for x in sms.het_breuschpagan(resids, model.model.exog,True)]], 
                                columns=['Estatistica', 'P-valor', 'f-value', 'f p-value'])
@@ -87,6 +87,9 @@ class testes_variancia:
         })
 
         return aov_table, coef_table, conf_int, pearson_table
+    
+
+
     
 
 

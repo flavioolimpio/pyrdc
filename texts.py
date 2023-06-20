@@ -227,6 +227,16 @@ class Texts:
             </body>
             """
         return TEXT11
+    
+    def text12(self, weight_name):
+        TEXT12 = f"""
+        <body style='text-align: justify; color: black;'>
+            <h1 style='text-align: justify; color: black;'>6. Método dos Mínimos Quadrados Ponderados</h1>
+            <p>Como rejeitou-se a hipótese de homocedasticidade, aplica-se o método dos mínimos quadrados ponderados, com fator de ponderação w = {weight_name}, em que x é concentração e y é área. A seguir, apresenta-se o modelo de regressão ponderado.</p>
+        </body>
+        """
+        return TEXT12
+
 
 
 
