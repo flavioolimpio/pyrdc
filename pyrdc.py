@@ -23,10 +23,10 @@ def linearidade():
     file = st.file_uploader("Arraste e solte um arquivo .csv ou .xlsx aqui", type=['dat', 'csv', 'xlsx', 'xls'])
     if file:
         if file.type == 'text/csv':
-            try:
-                df = pd.read_csv(file)
-            except:
-                df = pd.read_csv(file, sep=';')
+            first_line = file.readline().decode('utf-8')
+            sep = ',' if ',' in first_line else ';'
+            file.seek(0)
+            df = pd.read_csv(file, sep=sep)
         else:
             df = pd.read_excel(file)
 
