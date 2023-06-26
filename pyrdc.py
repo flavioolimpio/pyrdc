@@ -21,8 +21,18 @@ def home():
 def linearidade():
     st.title("Resultado da Análise")
     file = st.file_uploader("Arraste e solte um arquivo .csv ou .xlsx aqui", type=['csv', 'xlsx'])
-    if file:    
-        df = pd.read_csv(file)
+    if file:
+        if file.type == 'text/csv':
+            try:
+                df = pd.read_csv(file)
+            except:
+                df = pd.read_csv(file, sep=';')
+            first_line = file.readline().decode('utf-8')
+            sep = ',' if ',' in first_line else ';'
+            file.seek(0)
+            df = pd.read_csv(file, sep=sep)
+        else:
+            df = pd.read_excel(file)
 
         gettext = Texts()
     
