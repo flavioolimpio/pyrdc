@@ -23,10 +23,6 @@ def linearidade():
     file = st.file_uploader("Arraste e solte um arquivo .csv ou .xlsx aqui", type=['csv', 'xlsx'])
     if file:
         if file.type == 'text/csv':
-            try:
-                df = pd.read_csv(file)
-            except:
-                df = pd.read_csv(file, sep=';')
             first_line = file.readline().decode('utf-8')
             sep = ',' if ',' in first_line else ';'
             file.seek(0)
@@ -35,7 +31,7 @@ def linearidade():
             df = pd.read_excel(file)
 
         gettext = Texts()
-    
+
         text2 = gettext.text2()
         st.markdown('{}'.format(text2), unsafe_allow_html=True)
 
@@ -48,7 +44,7 @@ def linearidade():
         st.markdown('{}'.format(text4), unsafe_allow_html=True)
 
         gettestes = testes_variancia()
-        
+
         aov_table, coef_table, conf_int, pearson_table = gettestes.anova(data=df)
 
         st.write("Tabela 2: Esta tabela apresenta os resultados da análise de variância (ANOVA) para avaliar a significância das diferenças entre as médias dos grupos." +  
@@ -105,7 +101,7 @@ def linearidade():
         st.markdown('{}'.format(text9), unsafe_allow_html=True)
         st.write("Tabela 6: Teste de normalidade de Shapiro-Wilk com 95%.")
         st.table(shapiro)
-        
+
         pb = bp_test['P-valor']
         p_value_bp = pb.item()
         text10 = gettext.text10(p_value=p_value_bp)
@@ -113,15 +109,13 @@ def linearidade():
         st.write("Tabela 7: Teste de homecedasticidade Breusch-Pagan")
         st.table(bp_test)
 
-        
-
         pbg = bg_test['P-valor']
         p_value_bpg = pbg.item()
         text11 = gettext.text11(p_value=p_value_bpg)
         st.markdown('{}'.format(text11), unsafe_allow_html=True)
         st.write("Tabela 8: Teste de independência de Breusch-Godfrey")
         st.table(bg_test)
-        
+
         #st.write("Teste de homecedasticidade Goldfeld-Quandt")
         #st.table(gq_test)
      
