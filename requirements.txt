@@ -4,3 +4,4 @@ scipy
 seaborn
 scikit-learn
 openpyxl
+python-docx
