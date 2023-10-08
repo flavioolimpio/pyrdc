@@ -249,9 +249,9 @@ PAGES = {
 }
 
 # Criação do menu suspenso com ícones
-#with st.sidebar:
-selected = option_menu(None, ["Home", 'Linearidade', 'Precisão', 'Exatidão', 'Robustez'], icons=['house', 'graph-up', 'target', 'check-circle', 'shield'], menu_icon="cast", default_index=0, orientation="horizontal")
-selected
+with st.sidebar:
+    selected = option_menu("Main Menu", ["Home", 'Linearidade', 'Precisão', 'Exatidão', 'Robustez'], icons=['house', 'graph-up', 'target', 'check-circle', 'shield'], menu_icon="cast", default_index=0, orientation="horizontal")
+    selected
 
 # Renderização da página selecionada
 page = PAGES[selected]
