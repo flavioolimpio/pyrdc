@@ -250,7 +250,7 @@ PAGES = {
 
 # Criação do menu suspenso com ícones
 with st.sidebar:
-    selected = option_menu("Main Menu", ["Home", 'Linearidade', 'Precisão', 'Exatidão', 'Robustez'], icons=['house', 'graph-up', 'target', 'check-circle', 'shield'], menu_icon="cast", default_index=1)
+    selected = option_menu("Main Menu", ["Home", 'Linearidade', 'Precisão', 'Exatidão', 'Robustez'], icons=['house', 'graph-up', 'bullseye', 'check-circle', 'shield'], menu_icon="cast", default_index=1)
     selected
 
 # Renderização da página selecionada
