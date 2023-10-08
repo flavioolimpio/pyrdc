@@ -233,7 +233,10 @@ def linearidade():
 # Criação das páginas
 PAGES = {
     "Home": home,
-    "Linearidade": linearidade
+    "Linearidade": linearidade,
+    "Precisão": '', 
+    "Exatidão": '', 
+    'Robustez': ''
 }
 
 # Criação do menu suspenso com ícones
