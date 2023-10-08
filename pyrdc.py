@@ -228,15 +228,24 @@ def linearidade():
         
         #st.write("Teste de homecedasticidade Goldfeld-Quandt")
         #st.table(gq_test)
+
+def precisao():
+    pass
+
+def exatidao():
+    pass
+
+def robustez():
+    pass
      
 
 # Criação das páginas
 PAGES = {
     "Home": home,
     "Linearidade": linearidade,
-    "Precisão": '', 
-    "Exatidão": '', 
-    'Robustez': ''
+    "Precisão": precisao, 
+    "Exatidão": exatidao, 
+    'Robustez': robustez
 }
 
 # Criação do menu suspenso com ícones
